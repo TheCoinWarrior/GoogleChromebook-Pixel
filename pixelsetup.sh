@@ -46,20 +46,23 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 
 # change to Downloads directory
-cd ~/Downloads/
+mkdir Downloads
+cd Downloads
 
 sleep 5
 
 echo "Step 1 : Installing dependencies ..."
+echo
 sudo apt-get install unzip git git-core wget gnupg -y
 sudo apt-get install python3 python3-pip -y
-sudo apt-get install curl apt-transport-https
+sudo apt-get install curl apt-transport-https -y
 sudo apr-get install software-properties-common python-software-properties -y
 
 
 sleep 5
 
 echo "Step 2 : Installing Terraform ..."
+echo
 # Install and configure Terraform
 # Check for latest release https://releases.hashicorp.com/terraform/
 sudo wget https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip
@@ -69,19 +72,21 @@ sudo mv terraform /usr/local/bin/
 sleep 5
 
 echo "Step 3 : Installing Ansible ..."
+echo
 # Install Ansible 
 echo " Installing Ansible ..."
 sudo apt-get update -y
 sudo apt-get upgrade -y
-sudo apt-get install ansible
+sudo apt-get install ansible -y
 
 sleep 5
 
 echo "Step 4 : Install Microsoft Visual Code ..."
+echo
 # Install VisualCode
 sudo curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 sudo curl -L https://go.microsoft.com/fwlink/?LinkID=760868 > code.deb
-sudo apt-get install libxss1 libasound2 
+sudo apt-get install libxss1 libasound2 -y
 sudo dpkg -i code.deb
 sudo apt --fix-broken install -y
 sudo dpkg -i code.deb
@@ -89,6 +94,7 @@ sudo dpkg -i code.deb
 sleep 5
 
 echo "Step:5 Install Slack ..."
+echo
 # Download the latest Slack-*.deb package
 # https://slack.com/downloads/instructions/ubuntu
 sudo wget https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.3-amd64.deb
